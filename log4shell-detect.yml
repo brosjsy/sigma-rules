@@ -1,0 +1,44 @@
+title: To detect log4shell
+author: Anil Yelken
+description: To detect log4shell
+logsource:
+    category: webserver
+detection:
+    selection:
+      UserAgent:
+        - 'base64:JHtqbmRp'
+        - 'base64:'
+        - 'jndi:ldap:'
+        - 'jndi:rmi:'
+        - 'jndi:ldaps:'
+        - 'jndi:dns:'
+        - '%7bjndi:'
+        - '%24%7bjndi:'
+        - '%2F%252524%25257Bjndi'
+        - 'jndi:$${lower:'
+        - 'jndi:nis'
+        - 'jndi:nds'
+        - 'jndi:corba'
+        - 'jndi:iiop'
+        - '{::-l}$${::-d}$${::-a}$${::-p}'
+      Referrer:
+        - 'base64:JHtqbmRp'
+        - 'base64:'
+        - 'jndi:ldap:'
+        - 'jndi:rmi:'
+        - 'jndi:ldaps:'
+        - 'jndi:dns:'
+        - '%7bjndi:'
+        - '%24%7bjndi:'
+        - '%2F%252524%25257Bjndi'
+        - 'jndi:$${lower:'
+        - 'jndi:nis'
+        - 'jndi:nds'
+        - 'jndi:corba'
+        - 'jndi:iiop'
+        - '{::-l}$${::-d}$${::-a}$${::-p}'        
+    condition: selection
+fields:
+    - URL
+    - UserAgent
+level: critical
