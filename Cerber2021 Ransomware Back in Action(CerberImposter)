@@ -1,0 +1,37 @@
+title: Cerber2021 Ransomware Back in Action(CerberImposter)
+description: Cerber2021 Ransomware Back in Action(CerberImposter)
+author: Anil Yelken
+references:
+- https://blog.cyble.com/2022/06/17/cerber2021-ransomware-back-in-action
+- https://otx.alienvault.com/pulse/62ac750575a97d9806cc9aad
+date: 2022/06/19
+status: experimental
+logsource:
+  product: windows
+  service: sysmon
+detection:
+  selection:
+    EventID: 1
+    file_hash:
+    - f301501b4e2b8db73c73a604a6b67d21e24c05cb558396bc395dcb3f98de7ccf
+    - 46998fe7f03cf9f870d95b6585324bbde64fe0a673382ef571662ca2f40499bb
+    - 079987319655417735ed9b0359a6d8b46532cc38e68b75383c4c87227815bca4
+    - 6e9b7ca0e7442ce9ba91f6fb8eb4313050a9c3b7
+    - 3a951dd09d37b1ce59b7f6aeb7c704c91283f865
+    - 0fc7472537b4991b6a52e56b7eaad73ab356522e
+    - f40eb8db16cbc2ac5a69fc854ab4876c
+    - 714df70866e61f3c527489a51b286e88
+    - 02e99ee58ee459394afec7b0777a92db
+  condition: selection
+fields:
+- Hashes
+falsepositives:
+- Unknown
+level: high
+tags:
+- attack.t1070
+- attack.t1080
+- attack.t1083
+- attack.t1204
+- attack.t1486
+- attack.t1490
