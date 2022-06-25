@@ -1,0 +1,98 @@
+title: Unidentified RAT
+description: Unidentified RAT
+author: Anil Yelken
+references:
+- https://otx.alienvault.com/pulse/62b58a9ac069f1a3f59b7df4
+date: 2022/06/25
+status: experimental
+logsource:
+  product: windows
+  service: sysmon
+detection:
+  selection:
+    EventID: 1
+    file_hash:
+    - f9ca0448650e2c20a1c84bdf4d21e1f5
+    - f80417eeab656641c6a5206454b398d3
+    - f7563c080ebc1ddfde8cd35a391c013b
+    - f3f7d9cb1331a4d1270bc0b08b2090bc
+    - f11e7a01c20bdb65f339a2e16ff2ab71
+    - ef7c0cd1e8c1cb59d89b9bb7cb3e38b7
+    - e9c2b8bd1583baf3493824bf7b3ec51e
+    - e3e795ae8373330927da9e37b54a58b4
+    - e0d2510e666231c532ff97edf51abd10
+    - dee2271d40bae0ee404bd93800669e7f
+    - dee2271d40bae0ee404bd93800669e7f
+    - de0d57bdc10fee1e1e16e225788bb8de
+    - cc2269b4f6a11e02b40a384e27ad5e8c
+    - c8b9c69d2f0ea35735ae2205a7762bcd
+    - c85981382fb4eb606f6d91ad6bdc7112
+    - bfdaba9ac4dadf31b2346cf1104ecc0d
+    - bca539afcd691a4a238b78fc830dc55a
+    - b89ab7dbe7f05df8a1bebb81afcdbc9f
+    - acb35e1a2a26fb3ddd19a088cecb3166
+    - a9c4c9e1bc46b5a68f1853eabc7543bb
+    - a94f35a1d82b7ea31758e552c5c8dd4d
+    - a7502cfe7c93b5a4882fb1e6078e6652
+    - 9c82a4527253007ab20b19fef102c551
+    - 9c3d8f5359ac9abd96529387b2acbdde
+    - 9b071311ecd1a72bfd715e34dbd1bd77
+    - 8c14221bada15cef72ccc7f336dbe5f5
+    - 8b276f4187d986d845fbeca4606978e5
+    - 85d64a30df840f5f518c92faefdbf3a3
+    - 807875fc3b991f68fdcc9dd7536ecf58
+    - 7b1ce3fe542c6ae2919aa94e20dc860e
+    - 791660e03dd58cccf36d40f4c9bb6d75
+    - 78edf5fc05b665f28f902f99b039c408
+    - 78d132074de70aeea7869dd58a1c9f94
+    - 753a82453395193c63bfea56bfcf1ef2
+    - 61a37d0b6fceed27908f87fe41ab1965
+    - 4f2b9ad89041fedc43298c09c8e7b948
+    - 4d9a0bcd9467b5aaee5d4d762219821b
+    - 440d1de1ebc4370b4c5b9484f4d6bceb
+    - 3f71f9227c631d0a9e5fe0d336705ebf
+    - 3e200093f737fcd1e4bd350f6ffb7d56
+    - 38355455e83691feae2b4e6bc396081c
+    - 3764a0f1762a294f662f3bf86bac776f
+    - 2e1630eccc28f57d2eb5e243b81b472b
+    - 28c72f93d407e70be44e0cacd3994710
+    - 21fa1a043460c14709ef425ce24da4fd
+    - 1a1bf58f62faa7d93ce17441b9bf738d	
+    - 199a32712998c6d736a05b2dbd24a761		
+    - 11abdcdaaf0271c411451a3ae533aba4
+    - 0fd74e4e16029f0837428b76b1d62b68
+    - 0c44f8237fa873b9bd4efaa9489ad650
+    - 0a5f1fe82123e133fb124fb65751dd19
+    - 061073798e31a66598c1b1a1089e1256
+    - 05d38bc82d362dd57190e3cb397f807d
+    - 053c02fb38d86cde0b2f936311eff105
+    - 023183b361ae5de3c7493f32da9ab756
+    - 76f2c5f0312346caf82ed42148e78329f8d7b35a
+    - 6a87d8df99ea58d8612fa58a58b1a3a9512f160e
+    - 695d31cdac532be8e6d2a98220c0c55f3385aa0b
+    - 4a3f79d6821139bc1c3f44fb32e8450ee9705237
+    - 49a5852783fcefd9513b02d27a0304ae171f4459
+    - 45e0d90bd0283a1262d5afff46232e0ad4227d3b
+    - 33638da3a83c2688e1d20862b1de0b242a22e87c			
+    - 0e9e98d93463798645cc0a972a4ff6f99977318a
+    - f7f7b059b6a7dbd75b30b685b148025a0d4ceceab405e553ca28cacdeae43fab
+    - d071c4959d00a1ef9cce535056c6b01574d8a8104a7c3b00a237031ef930b10f
+    - 88a5e4b24747648a4e3f0a2d5282b51683260f9208b06788fc858c44559da1e8
+    - 7ea294d30903c0ab690bc02b64b20af0cfe66a168d4622e55dee4d6233783751
+    - 66966ceae7e3a8aace6c27183067d861f9d7267aed30473a95168c3fe19f2c16
+    - 4cd7efdb1a7ac8c4387c515a7b1925931beb212b95c4f9d8b716dbe18f54624f
+    - 3c2c835042a05f8d974d9b35b994bcf8d5a0ce19128ebb362804c2d0f3eb42c0
+    - 33b89b8915aaa59a3c9db23343e8c249b2db260b9b10e88593b6ff2fb5f71d2b
+    - 28e4e7104cbffa97a0aa2f53b5ebcbcdba360ec416b34bb617e2f8891d204816
+  condition: selection
+fields:
+- Hashes
+falsepositives:
+- Unknown
+level: high
+tags:
+- attack.t1057
+- attack.t1113
+- attack.t1056
+- attack.t1505
+- attack.t1090
