@@ -1,0 +1,62 @@
+title: BRONZE STARLIGHT Ransomware Operations Use HUI Loader
+description: BRONZE STARLIGHT Ransomware Operations Use HUI Loader
+author: Anil Yelken
+references:
+- https://otx.alienvault.com/pulse/62b9a6b3e1cc31cbdc79ceff
+date: 2022/06/27
+status: experimental
+logsource:
+  product: windows
+  service: sysmon
+detection:
+  selection:
+    EventID: 1
+    file_hash:
+    - f3355c8f43dada5a62aab60089c03d1e
+    - f259765905cd16ff40132f35c85a862a
+    - bde2a3c8e034d30ce13e684f324c6702
+    - b16bb2f910f21e2d4f6e2aa1a1ea0d8b
+    - b0175b09e58d34689a7403abed2ae2f5
+    - a4a6abf4ed4c9447683fba729a17197b
+    - 809fcab1225981e87060033d72edaeaf
+    - 69ef2d7f9ed29840b60a7fd32030cbd1
+    - 577a47811b3c57a663bcbf2aab99c9e3
+    - 4c3c7053ec145ad3976b2a84038c5feb
+    - 0c4a84b66832a08dccc42b478d9d5e1b
+    - f04f444d9f17d4534d37d3369bf0b20415186862
+    - ead02cb3f6b811427f2635a18398392bc2ebca3a
+    - dbc48357bfbe41f5bfdd3045066486e76a23ad2d
+    - d9efd4c4e1fb4e3d4a171c4ca0985839ad1cdee9
+    - c7a515276883a03981accfac182341940eb36071
+    - b24e254f6fdd67318547915495f56f8f2a0ac4fe
+    - b0fb6c7eecbf711b2c503d7f8f3cf949404e2dd2
+    - a75e9b702a892cc3e531e158ab2e4206b939f379
+    - 91f8805e64f434099d0137d0b7ebf3db3ccbf5d7
+    - 8502852561fcb867d9cbf45ac24c5985fa195432
+    - 7fe5674c9a3af8413d0ec71072a1c27d39edc14e
+    - 70225015489cae369d311b62724ef0caf658ffdf
+    - 64f5044709efc77230484cec8a0d784947056022
+    - 62fea3942e884855283faf3fb68f41be747c5baa
+    - 5df448af3f7935c3f4a2904b16af9ea00d13cb0c
+    - 5b5cd007fb96eef68d3d123eba82a4e4dfce50cd
+    - 5b56c5d86347e164c6e571c86dbf5b1535eae6b9
+    - 46a9b419d73a518effbc19c3316d8a20cff9ce4a
+    - 3246867705e8aad60491fe195bcc83af79470b22
+    - 160320b920a5ef22ac17b48146152ffbef60461f
+    - 15b52c468cfd4dee4599ec22b1c04b977416fbe5
+    - b0fb6c7eecbf711b2c503d7f8f3cf949404e2dd256b621c8cf1f3a2bdfb54301
+    - 5b56c5d86347e164c6e571c86dbf5b1535eae6b979fede6ed66b01e79ea33b7b
+  condition: selection
+fields:
+- Hashes
+falsepositives:
+- Unknown
+level: high
+tags:
+- attack.t1140
+- attack.t1574
+- attack.t1059
+- attack.t1505
+- attack.t1562
+- attack.t1471
+- attack.t1190
