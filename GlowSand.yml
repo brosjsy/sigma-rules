@@ -1,0 +1,86 @@
+title: GlowSand
+description: GlowSand
+author: Anil Yelken
+references:
+- https://otx.alienvault.com/pulse/62bc21172edd88c392a1eb24
+- https://inquest.net/blog/2022/06/27/glowsand
+date: 2022/06/29
+status: experimental
+logsource:
+  product: windows
+  service: sysmon
+detection:
+  selectionHash:
+    event_id: 1
+    event_data.Hashes:
+    - d965892ede4f74fa62248b381160ed6f0cd9158bf4788de40b57815f9108bc15
+    - c9939f994e25e1e935f101ee8bc4ce033aad8bea96d192dc700deb1d04ef7c66
+    - c850c872318328777441a6916d1994b714ad2c40104d9a7ebb9cfb0e537a3737
+    - a93ff0e6c42aa3f011a53108dc9b224dc85d9e0930f81e3b3010801089126e4e
+    - 6e7e381a1f7c739e4961957c1984b9eb8c0dee6cf7f15cd0a35c129d1147b013
+    - 6c1799a8141219b8933cdee57b27dfbf2561e48c3e4ec77ead685330e9c8aa23
+    - 1a1ac565ba08ac51eb6ef27d0fe47a03372112f476ad3008f6ead30dbdcee565
+    - f48d9c96a7f3befd5fa7d8363f4e6df526fca00e
+    - 63f5ea77d82dc73d66d59cf155f66dbda7743b41
+    - 559fe253d19091095bf116215c5cf050f2c25e84
+    - 4e51cd3fe25c0c42bd9c2317af6dd38c517d9b1f
+    - 422aee5b8d59b8eb7f5f4a210044507b2f1e4920
+    - b96b1d246d5ef64db902826ec778de9c
+    - 7a91febc06be0dad3c90f0245456383e
+    - 71ba796a0946dacc5af63d36f89673e6
+    - 3ad4755acb3247e4e3bf9f1bf877abed
+    - 2fccf27f67d20df1dbb0de7311b5be13
+  selectionURL:
+    resource.URL:
+    - xml.vipertos.ru
+    - preview.necessary42.vipertos.ru
+    - necessary42.vipertos.ru
+    - kasimov.vipertos.ru
+    - intense37.vipertos.ru
+    - goat57.vipertos.ru
+    - goat19.vipertos.ru
+    - fancied.intense37.vipertos.ru
+    - fake89.vipertos.ru
+    - fake84.vipertos.ru  
+    - fake64.vipertos.ru
+    - fake42.vipertos.ru
+    - fake39.vipertos.ru
+    - enforce.interdependent23.vipertos.ru
+    - delicious71.kolopartor.ru
+    - claim.goat57.vipertos.ru
+    - claim.goat19.vipertos.ru
+    - alphabet.fake89.vipertos.ru
+    - alphabet.fake84.vipertos.ru
+    - alphabet.fake64.vipertos.ru
+    - alphabet.fake42.vipertos.ru
+    - alphabet.fake39.vipertos.ru
+    - zvonishu.ru
+    - vosemart.ru
+    - qiwardos.ru
+    - nitikora.ru
+    - nikotod.ru
+    - mitlight.ru
+    - milotraf.ru
+    - migrotu.ru
+    - kudrashi.ru
+    - kopratiso.ru
+    - hitmomas.ru
+    - hikortaf.ru
+    - ginyou.ru
+    - fingerso.ru
+    - dogvilla.ru
+    - dodortar.ru
+    - bilotrast.ru
+    - billyhot.ru
+    - bilitora.ru
+    - akashito.ru
+  condition: selectionHash or selectionURL
+falsepositives:
+- Unknown
+level: high
+tags:
+- attack.t1102
+- attack.t1547
+- attack.t1105
+- attack.t1566
+- attack.t1036
