@@ -1,0 +1,42 @@
+title: Murenshark Detection
+description: Murenshark Detection
+author: Anil Yelken
+references:
+- http://blog.nsfocus.net/murenshark/
+date: 2022/08/22
+status: experimental
+logsource:
+  product: windows
+  service: sysmon
+detection:
+  selection:
+    EventID: 1
+    file_hash:
+    - 0a286239b3fe2e44545470e4117f66eb
+    - 88bba0077207359cdb9bddb3760f1f32
+    - 423cff633679c5dc1bfb27b4499eb171
+    - 3592e56022ce1d87000e36cc0dd37d0e
+    - bb9e1f1e5ef6f3f9f8de6d12d626c435
+    - 11a5c681e108cf84a2cc669e8204ac53
+    - 0a768a5c9f4714f7ca92545baf9f72c9
+    - a92c6617aa28d4041c44f4b9cc3a5fa3
+    - 9a31e7918ae4de42c28d67e711802f58
+    - 07e4844bde106bb6786e9e767d376408
+    - 9a0889667c89e592914e74916fd1ec56
+    - 468b3eaf031b5aef98b34b5ce39facad
+    - c0f37db18293732872643994e12a4ad2
+    - 44da01a0a636a6fa3141c698f3bb2673
+    - e6c1685e504fe1d05aa365c79a5e0231
+    - 32704a3fb28508e3b15bbbd28716ec76
+    - dc60577efe1d18c05b7c90853bac4c86
+    - 349341fe3519a81c0178c5840009cf87
+    - 156e197d7838558f44eed800b3b3ee8a
+    - 0f5b520120008ca6969ccad439020f98
+    - d509145bcf4e6af3de1a746609c23564
+    - 156e197d7838558f44eed800b3b3ee8a
+  condition: selection
+fields:
+- Hashes
+falsepositives:
+- Unknown
+level: high
