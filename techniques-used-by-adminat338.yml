@@ -1,0 +1,41 @@
+title: Techniques used by admin@338
+description: Techniques used by admin@338
+author: Anil Yelken
+references:
+ - https://attack.mitre.org/groups/G0018/
+status: experimental
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection:
+        CommandLine:
+            - 'net user * >> %temp%\\download'
+            - 'net user >> %temp%\download'
+            - 'net user /domain >> %temp%\download'
+            - 'dir c:\ >> %temp%\download'
+            - 'dir "c:\Documents and Settings" >> %temp%\download'
+            - 'dir "c:\Program Files\" >> %temp%\download'
+            - 'dir d:\ >> %temp%\download'
+            - 'ren "%temp%\upload" audiodg.exe'
+            - 'net localgroup administrator >> %temp%\download'
+            - 'ver >> %temp%\download'
+            - 'systeminfo >> %temp%\download'
+            - 'ipconfig /all >> %temp%\download'
+            - 'netstat -ano >> %temp%\download'
+            - 'net start >> %temp%\download'
+    condition: selection
+fields:
+- CommandLine
+falsepositives:
+- Normal system activity
+tags:
+- attack.t1087.001
+- attack.t1083
+- attack.t1036.005
+- attack.t1069.001
+- attack.t1082
+- attack.t1016
+- attack.t1049
+- attack.t1007
+level: medium
