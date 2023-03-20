@@ -10,7 +10,6 @@ logsource:
 detection:
     selection:
         CommandLine:
-            - 'net user * >> %temp%\\download'
             - 'net user >> %temp%\download'
             - 'net user /domain >> %temp%\download'
             - 'dir c:\ >> %temp%\download'
